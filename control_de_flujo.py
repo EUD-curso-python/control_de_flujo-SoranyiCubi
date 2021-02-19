@@ -2,9 +2,10 @@
 """Guarde en lista `naturales` los primeros 100 números naturales (desde el 1) 
 usando el bucle while
 """
-
-
-
+naturales = 0
+while naturales <= 99:
+    naturales += 1
+    print(naturales)    
 
 """Guarde en `acumulado` una lista con el siguiente patrón:
 
