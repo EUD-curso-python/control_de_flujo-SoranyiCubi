@@ -168,7 +168,7 @@ cantidad máxima de asteriscos de 30.
 **
 *
 """
-
-
+patron = ''
+for                                        
 
 
