@@ -5,7 +5,7 @@ usando el bucle while
 naturales = 0
 while naturales <= 99:
       naturales = naturales + 1
-print(naturales)     
+      print(naturales)     
 
 """Guarde en `acumulado` una lista con el siguiente patrón:
 
@@ -13,7 +13,7 @@ print(naturales)
 
 Hasta el número 50.
 """
-rango = list(range(1,50))
+rango = list(range(1,51))
 acumula = ''
 acumulado = list()
 for n in (rango):
@@ -35,10 +35,17 @@ separados por coma, así:
 '134,268,...'
 
 """
-
-
-
-
+n=1
+tabla100 = ''
+while n < 11:  
+   Multiplo = 134 * n
+   Multiplo = str(Multiplo)
+   if n == 10:
+      tabla100 = tabla100 + Multiplo
+   else:
+      tabla100 = tabla100 + Multiplo + ","
+   n += 1  
+   print(tabla100)
 
 """Guardar en `multiplos3` la cantidad de números que son múltiplos de 3 y 
 menores o iguales a 300 en la lista `lista1` que se define a continuación (la lista 
@@ -68,29 +75,43 @@ print(multiplos3)
   '1'
 ]
 """
-
-
-
-
-
+regresivo50 = []
+n = 1
+VarAgregar = ""
+while n < 51:
+    if n==1:
+      VarAgregar = str(n)
+    else:
+      VarAgregar = str(n) + " " + VarAgregar
+    regresivo50.append(VarAgregar)
+    n += 1
+regresivo50.reverse()
 
 """Invierta la siguiente lista usando el bucle for y guarde el resultado en 
 `invertido` (sin hacer uso de la función `reversed` ni del método `reverse`)
 """
 lista2 = list(range(1, 70, 5))
 
-
-
-
+invertido = []
+for elemento in lista2:
+  invertido.insert(0, elemento)
+  print(invertido)
 
 """Guardar en `primos` una lista con todos los números primos desde el 37 al 300
 Nota: Un número primo es un número entero que no se puede calcular multiplicando 
 otros números enteros.
 """
+primos=[]
+n=37
 
-
-
-
+while n < 301:
+  number=n
+  for i in range(2, number):
+      if (number % i) == 0:
+          break
+  else:
+      primos.append(n)
+  n+=1
 
 """Guardar en `fibonacci` una lista con los primeros 60 términos de la serie de 
 Fibonacci.
@@ -100,10 +121,13 @@ del segundo cada uno se calcula sumando los dos anteriores términos de la serie
 [0, 1, 1, 2, 3, 5, 8, ...]
 
 """
+fibonacci=[0,1]
+n=2
 
-
-
-
+while n < 60:
+  VarAgregar=int(fibonacci[n-1])+int(fibonacci[n-2])
+  fibonacci.append(VarAgregar)
+  n+=1
 
 """Guardar en `factorial` el factorial de 30
 El factorial (símbolo:!) Significa multiplicar todos los números enteros desde
@@ -113,10 +137,12 @@ Por ejemplo, el factorial de 5 se calcula así:
 
 5! = 5 × 4 × 3 × 2 × 1 = 120
 """
+n=1
+factorial=1
 
-
-
-
+while n < 31:
+  factorial=factorial*n
+  n+=1
 
 """Guarde en lista `pares` los elementos de la siguiente lista que esten 
 presentes en posiciones pares, pero solo hasta la posición 80.
@@ -135,18 +161,21 @@ print(pares)
 """Guarde en lista `cubos` el cubo (potencia elevada a la 3) de los números del 
 1 al 100. 
 """
+n=1
+cubos=[]
 
-
-
-
+while n<101:
+  cubos.append(n**3)
+  n+=1
 
 """Encuentre la suma de la serie 2 +22 + 222 + 2222 + .. hasta sumar 10 términos 
 y guardar resultado en variable `suma_2s` 
 """
-
-
-
-
+suma_2s=0
+NumBase="2"
+while len(NumBase) < 11:
+  suma_2s=suma_2s + int(NumBase)
+  NumBase= NumBase + "2"
 
 """Guardar en un string llamado `patron` el siguiente patrón llegando a una 
 cantidad máxima de asteriscos de 30. 
@@ -167,8 +196,23 @@ cantidad máxima de asteriscos de 30.
 ***
 **
 *
-"""
-patron = ''
-for                                        
+"""                             
+StringBase='*'
+patron=''
+i=1
 
+while i < 31:
+  if i==1:
+    patron=StringBase + "\n"
+  else:
+    patron=patron + (StringBase*i) + "\n"
+  i+=1
 
+i=i-2
+
+while i>0:
+  if i==1:
+    patron=patron + (StringBase*i)
+  else:
+    patron=patron + (StringBase*i) + "\n"
+  i-=1
